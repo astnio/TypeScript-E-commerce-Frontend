@@ -1,4 +1,4 @@
-# Simple E-commerce Frontend v2
+# TypeScript E-commerce Frontend
 
 > An e-commerce site frontend made only with TypeScript, Vite, and built-in JavaScript APIs.
 
