@@ -110,7 +110,7 @@ export class CartItem {
   }
 
   get variantName(): string | null {
-    return this.productVariant.nameOverride;
+    return this.productVariant.name;
   }
 
   get variantDescription(): string | null {

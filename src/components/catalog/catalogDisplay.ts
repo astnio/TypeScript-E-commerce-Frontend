@@ -12,11 +12,8 @@ const TPL_Catalog_css = /* CSS */ `
 
 TPL_Catalog.innerHTML = /* HTML */ `
   ${TPL_Catalog_css}
-  
-  <div class="catalog-container">
 
-  </div>
-
+  <div class="catalog-container"></div>
 `;
 
 export default class CatalogDisplay extends HTMLElement {
@@ -27,11 +24,9 @@ export default class CatalogDisplay extends HTMLElement {
     shadow.append(clone);
   }
 
-  connectedCallback() {
-  }
+  connectedCallback() {}
 
-  disconnectedCallback() {\
-  }
+  disconnectedCallback() {}
 }
 
 window.customElements.define('catalog-display', CatalogDisplay);
