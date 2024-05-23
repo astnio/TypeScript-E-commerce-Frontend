@@ -13,3 +13,11 @@ The mockup database was also something I did not like, and I feel as though I co
 The project is beyond what most would probably consider to be "simple" at this point, but I am still calling it that due to not using any frameworks besides TypeScript and Vite.
 
 I have also decided to standardize the spelling of the project title, from ecommerce (no hyphen) to e-commerce (with hyphen).
+
+# Using Components
+
+## Buttons
+
+Buttons are called `app-buttons`. There are three types, and they are `primary`, `secondary`, and `tertiary`.
+
+The normal way to create them would be to instantiate them with code. They have several optional parameters: `iconName`, `iconType`, `type`, and `size`.
