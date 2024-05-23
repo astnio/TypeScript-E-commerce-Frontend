@@ -21,3 +21,38 @@ I have also decided to standardize the spelling of the project title, from ecomm
 Buttons are called `app-buttons`. There are three types, and they are `primary`, `secondary`, and `tertiary`.
 
 The normal way to create them would be to instantiate them with code. They have several optional parameters: `iconName`, `iconType`, `type`, and `size`.
+
+You can also add them in `HTML` using properties.
+
+Example (icon only):
+
+```html
+<app-button
+iconName="windows"
+iconType="logo"
+type="secondary"
+size="lg"></app-button>
+```
+
+---
+
+Example (icon + text):
+
+```html
+<app-button
+iconName="windows"
+iconType="logo"
+type="secondary"
+size="lg">Lorem Ipsum</app-button>
+```
+
+---
+
+Example (text only):
+
+```html
+<app-button
+type="tertiary"
+size="sm"
+>Lorem Ipsum</app-button>
+```
