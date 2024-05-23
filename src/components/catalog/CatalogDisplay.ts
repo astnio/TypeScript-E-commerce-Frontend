@@ -8,8 +8,10 @@ const TPL_CatalogContainer_css = /* CSS */ `
 <style>
   .container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 4rem;
+    margin-bottom: 8rem;
   }
 </style>
 `;
@@ -18,7 +20,6 @@ TPL_CatalogContainer.innerHTML = /* HTML */ `
   ${TPL_CatalogContainer_css}
 
   <div class="container">
-    <p>Hello, world</p>
   </div>
 `;
 
