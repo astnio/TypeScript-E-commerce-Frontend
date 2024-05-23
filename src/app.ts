@@ -103,26 +103,6 @@ export function initTesting(overlay: AppOverlay) {
   // app.append(buttonToggleNav);
 
   // DrawerOverlayManager.getDrawer('cartDrawer').open();
-
-  // TODO: Move all this stuff to the CatalogContainer component so it
-  // stops filling up so much space here
-  // const catalogItems = document.createElement('div');
-  // const allCatalogProducts = Catalog.getAllGroups();
-
-  // function populateCatalog() {
-  //   for (const key in allCatalogProducts) {
-  //     const catalogCard = new CatalogCard(Catalog.getGroup(key));
-  //     catalogItems.append(catalogCard);
-  //   }
-
-  //   catalogItems.style.display = 'flex';
-  //   catalogItems.style.flexWrap = 'wrap';
-  //   catalogItems.style.gap = '10px';
-
-  //   app.append(catalogItems);
-  // }
-
-  // populateCatalog();
 }
 
 initPage();
