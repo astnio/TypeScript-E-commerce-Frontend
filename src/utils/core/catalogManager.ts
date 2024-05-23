@@ -53,7 +53,7 @@ async function processData() {
   }
 }
 
-// TODO: Move this somewhere else (like maybe the CatalogDisplay.ts component that I am not using)
+// TODO: Move this somewhere else (like maybe the CatalogContainer.ts component that I am not using)
 export async function initCatalog() {
   try {
     const productData = await processData();

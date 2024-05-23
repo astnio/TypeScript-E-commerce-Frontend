@@ -7,6 +7,7 @@ import SiteNav from './components/navigation/SiteNav.ts';
 import AppBar from './components/navigation/AppBar.ts';
 import CartMenu from './components/cart/CartMenu.ts';
 import CatalogCard from './components/catalog/CatalogCard.ts';
+import CatalogDisplay from './components/catalog/CatalogDisplay.ts';
 
 await initApp();
 
@@ -82,6 +83,9 @@ appHTML.innerHTML = /* HTML */ `
   </div>
 `;
 
+const catalogDisplay = new CatalogDisplay;
+app.append(catalogDisplay);
+
 export function initTesting(overlay: AppOverlay) {
   // const buttonToggleCart = createButton(
   //   'Toggle Cart',
@@ -100,25 +104,25 @@ export function initTesting(overlay: AppOverlay) {
 
   // DrawerOverlayManager.getDrawer('cartDrawer').open();
 
-  // TODO: Move all this stuff to the CatalogDisplay component so it
+  // TODO: Move all this stuff to the CatalogContainer component so it
   // stops filling up so much space here
-  const catalogItems = document.createElement('div');
-  const allCatalogProducts = Catalog.getAllGroups();
+  // const catalogItems = document.createElement('div');
+  // const allCatalogProducts = Catalog.getAllGroups();
 
-  function populateCatalog() {
-    for (const key in allCatalogProducts) {
-      const catalogCard = new CatalogCard(Catalog.getGroup(key));
-      catalogItems.append(catalogCard);
-    }
+  // function populateCatalog() {
+  //   for (const key in allCatalogProducts) {
+  //     const catalogCard = new CatalogCard(Catalog.getGroup(key));
+  //     catalogItems.append(catalogCard);
+  //   }
 
-    catalogItems.style.display = 'flex';
-    catalogItems.style.flexWrap = 'wrap';
-    catalogItems.style.gap = '10px';
+  //   catalogItems.style.display = 'flex';
+  //   catalogItems.style.flexWrap = 'wrap';
+  //   catalogItems.style.gap = '10px';
 
-    app.append(catalogItems);
-  }
+  //   app.append(catalogItems);
+  // }
 
-  populateCatalog();
+  // populateCatalog();
 }
 
 initPage();
