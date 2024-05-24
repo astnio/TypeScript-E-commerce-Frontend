@@ -15,6 +15,7 @@ await initApp();
 // Also look at the appInit.ts and read the TODO there
 export const app = document.createElement('div');
 const appHTML = document.createElement('template');
+const catalogDisplay = new CatalogDisplay;
 
 function initPage() {
   const drawerOverlay = new AppOverlay();
@@ -83,7 +84,6 @@ appHTML.innerHTML = /* HTML */ `
   </div>
 `;
 
-const catalogDisplay = new CatalogDisplay;
 app.append(catalogDisplay);
 
 export function initTesting(overlay: AppOverlay) {
