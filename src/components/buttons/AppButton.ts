@@ -207,7 +207,7 @@ TPL_AppButton.innerHTML = /* HTML */ `
   ${TPL_AppButton_CSS}
 
   <button class="btn">
-    <div class="btn-content">
+    <div class="btn-content" aria-label="">
       <slot></slot>
     </div>
   </button>
@@ -236,6 +236,7 @@ class AppButton extends HTMLElement {
     this.initIcon();
     this.initButtonSizing();
     this.updateButtonSizing();
+    this.checkIfAriaLabelValid()
   }
 
   initButtonSizing() {
@@ -304,6 +305,7 @@ class AppButton extends HTMLElement {
 
   static get observedAttributes() {
     return [
+      'ariaLabel',
       'type',
       'size',
       'fullWidth',
@@ -316,6 +318,15 @@ class AppButton extends HTMLElement {
       'iconAnimation',
       'iconPull',
     ];
+  }
+
+  get ariaLabel(): string | null {
+    return this.getAttribute('aria-label');
+  }
+
+  set ariaLabel(value: string) {
+    this.setAttribute('aria-label', value);
+    this.checkIfAriaLabelValid()
   }
 
   get type(): string | null {
@@ -442,6 +453,10 @@ class AppButton extends HTMLElement {
     if (oldVal === newVal) return;
 
     switch (attName) {
+      case 'ariaLabel':
+        this.ariaLabel = newVal;
+        this.checkIfAriaLabelValid()
+        break;
       case 'type':
         this.type = newVal;
         this._button.classList.remove(`btn-${oldVal}`);
@@ -551,6 +566,13 @@ class AppButton extends HTMLElement {
     document.removeEventListener('themeChanged', () => {
       this.updateIconColor();
     });
+  }
+
+  checkIfAriaLabelValid() {
+    if (this.ariaLabel == '' || this.ariaLabel == 'Button' || this.ariaLabel == null) {
+      console.warn(`This button has no label!`)
+      console.log(this._button);
+    }
   }
 }
 window.customElements.define('app-button', AppButton);
