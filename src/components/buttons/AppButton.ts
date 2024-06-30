@@ -206,8 +206,8 @@ const TPL_AppButton_CSS = /* CSS */ `
 TPL_AppButton.innerHTML = /* HTML */ `
   ${TPL_AppButton_CSS}
 
-  <button class="btn">
-    <div class="btn-content" aria-label="">
+  <button class="btn" aria-label="">
+    <div class="btn-content">
       <slot></slot>
     </div>
   </button>
@@ -236,7 +236,13 @@ class AppButton extends HTMLElement {
     this.initIcon();
     this.initButtonSizing();
     this.updateButtonSizing();
+    this.updateAriaLabel();
     this.checkIfAriaLabelValid()
+  }
+
+  updateAriaLabel(){
+    if (this.getAttribute('ariaLabel'))
+      this._button.setAttribute('aria-label', this.getAttribute('ariaLabel')!);
   }
 
   initButtonSizing() {
@@ -321,11 +327,12 @@ class AppButton extends HTMLElement {
   }
 
   get ariaLabel(): string | null {
-    return this.getAttribute('aria-label');
+    return this._button.getAttribute('aria-label');
   }
 
   set ariaLabel(value: string) {
-    this.setAttribute('aria-label', value);
+    this.setAttribute('ariaLabel', value);
+    this._button.setAttribute('aria-label', value);
     this.checkIfAriaLabelValid()
   }
 

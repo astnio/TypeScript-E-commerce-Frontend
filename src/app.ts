@@ -45,6 +45,7 @@ appHTML.innerHTML = /* HTML */ `
       <app-button
         iconName="yelp"
         iconType="logo"
+        ariaLabel="Home"
         >Home</app-button
       >
       <app-button
