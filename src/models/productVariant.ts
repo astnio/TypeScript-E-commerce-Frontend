@@ -1,9 +1,11 @@
+import { VariantProperty } from "../utils/types/VariantProperty";
+
 export class ProductVariant {
   private _variantId: string = '0';
   private _variantName: string | null = null;
   private _variantDescription: string | null = null;
   private _variantPrice: number | null = null;
-  private _variantProperties: {[key: string]: String } = {};
+  private _variantProperties: { [key: string]: VariantProperty } = {};
 
   constructor(id: string, name?: string, description?: string, price?: number) {
     this.id = id;
@@ -42,5 +44,27 @@ export class ProductVariant {
 
   set price(value: number) {
     this._variantPrice = value;
+  }
+
+  get properties(): { [key: string]: VariantProperty } {
+    return this._variantProperties;
+  }
+
+  set properties(value: { [key: string]: VariantProperty }) {
+    this._variantProperties = value;
+  }
+
+  addProperty(name: string, value: VariantProperty) {
+    this._variantProperties[name] = value;
+  }
+
+  removeProperty(key: string) {
+    if (this.hasProperty(key)) {
+      delete this._variantProperties[key];
+    }
+  }
+
+  hasProperty(key: string): boolean {
+    return key in this._variantProperties;
   }
 }
