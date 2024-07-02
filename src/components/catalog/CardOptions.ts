@@ -28,6 +28,8 @@ export default class CardOptions extends HTMLElement {
     shadow.append(clone);
 
     this._productGroup = productGroup;
+    console.log('CardOptions');
+    console.log(this._productGroup.variants);
   }
 
   connectedCallback() {}

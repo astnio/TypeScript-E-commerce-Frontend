@@ -1,7 +1,5 @@
 import { ProductGroup } from '../../models/productGroup.ts';
 import { ProductVariant } from '../../models/productVariant.ts';
-import { Cart } from '../../utils/core/cartManager.ts';
-import { Catalog } from '../../utils/core/catalogManager.ts';
 import { DrawerOverlayManager } from '../../utils/ui/drawerOverlayManager.ts';
 import CardOptions from './CardOptions.ts';
 
@@ -138,12 +136,11 @@ export default class CatalogCard extends HTMLElement {
     this._itemTitleLabel.innerText = this.itemName;
     this._itemDescriptionLabel.innerText = this.itemDescription;
     this._itemPriceLabel.innerText = this.itemPrice;
+    this._addButton.setAttribute('ariaLabel', `Add ${this.itemName} to cart`);
 
     this._cardOptions = new CardOptions(productGroup);
 
     this._optionsContainer.append(this._cardOptions);
-
-    console.log(this._productGroup.variants);
   }
 
   get item(): ProductGroup | null {

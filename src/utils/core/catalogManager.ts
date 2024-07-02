@@ -25,7 +25,6 @@ export class Catalog {
   }
 }
 
-// const productsJSONUrl = './server/data/products.json';
 const productsJSONUrl = './server/data/test_products2.json';
 
 async function loadJSONProducts(url: string) {
@@ -34,8 +33,7 @@ async function loadJSONProducts(url: string) {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error('Error fetching JSON: ', error);
     return null;
