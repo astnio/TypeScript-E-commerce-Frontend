@@ -3,6 +3,7 @@ export class ProductVariant {
   private _variantName: string | null = null;
   private _variantDescription: string | null = null;
   private _variantPrice: number | null = null;
+  private _variantProperties: {[key: string]: String } = {};
 
   constructor(id: string, name?: string, description?: string, price?: number) {
     this.id = id;

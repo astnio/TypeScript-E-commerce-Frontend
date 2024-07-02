@@ -7,8 +7,8 @@
     "tags": ["example", "test", "lorem ipsum"],
     "price": 9999.99,
     "imageSetSources": ["/", "/", "/"],
-    "variants": [
-      {
+    "variants": {
+      "def456": {
         "id": "def456",
         "name": "Example Variant 1",
         "description": "An example variant of a product group.",
@@ -26,7 +26,7 @@
           }
         }
       },
-      {
+      "ghi789": {
         "id": "ghi789",
         "name": "Example Variant 2",
         "description": "Another example variant of a product group.",
@@ -49,7 +49,7 @@
           }
         }
       }
-    ]
+    }
   },
   {
     "id": "xyz890",
@@ -59,8 +59,8 @@
     "tags": ["example", "test", "lorem ipsum"],
     "price": 9999.99,
     "imageSetSources": ["/", "/", "/"],
-    "variants": [
-      {
+    "variants": {
+      "def456": {
         "id": "def456",
         "name": "Example Variant 1",
         "description": "An example variant of a product group.",
@@ -78,7 +78,7 @@
           }
         }
       },
-      {
+      "ghi789": {
         "id": "ghi789",
         "name": "Example Variant 2",
         "description": "Another example variant of a product group.",
@@ -101,6 +101,6 @@
           }
         }
       }
-    ]
+    }
   }
 ]
