@@ -35,6 +35,7 @@ function initPage() {
 /*** ******* ***/
 
 appHTML.innerHTML = /* HTML */ `
+  <h3>Hello, world</h3>
   <div>
     <div class="btn-group">
       <app-button iconName="home" iconType="solid" ariaLabel="Home" size="lg"
